@@ -19,6 +19,7 @@ def index(request):
         file_name_2 = default_storage.save(file_name, f) 
         file_url = 'mysite' + default_storage.url(file_name_2)
 
+        #img dimensions for the model input
         img_height = 180
         img_width = 180
         img = tf.keras.utils.load_img(file_url, target_size=(img_height, img_width)) # load image
@@ -28,10 +29,14 @@ def index(request):
         predictions = settings.IC_MODEL.predict(img_array)
         score = tf.nn.softmax(predictions[0])
         
-        context['message'] = "Prediction results:"
-        context['class'] = np.argmax(score)
-        context['confidence'] = '%' + str(100 * np.max(score)) + ' confidence'
-        
+        context['prediction'] = settings.IC_CLASSES[np.argmax(score)]
+        context['confidence'] = str(round(100 * np.max(score),3))
+        all_scores = {}
+        for idx,class_name in enumerate(settings.IC_CLASSES):
+            all_scores[class_name] = round(100*score.numpy()[idx],3)
+        context['all_scores'] = all_scores
+        context['prediction_message'] = "Prediction results: " + context['prediction'] + ' with a ' + context['confidence'] + '% confidence'
+        context['all_scores_message'] = "Here are the results of the models predictions:"
         default_storage.delete(file_name)
         return render(request,'index.html', context=context)
     else:

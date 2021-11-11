@@ -11,13 +11,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
-# Load in the model
-import tensorflow as tf
 import os
+
+
+# Image Classification model stuff
+import tensorflow as tf
 from tensorflow import keras
 
 IC_MODEL = tf.keras.models.load_model('mysite/mysite/model/saved_tutorialmodel')
+IC_CLASSES = ['daisy 🌼', 'dandelion 🌼', 'rose 🌹', 'sunflower 🌻', 'tulips 🌷']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

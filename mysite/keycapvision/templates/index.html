@@ -12,8 +12,11 @@
         <input type="file" name="sentFile" />
         <input type="submit" name="submit" value="Upload" />
     </form>
-    {{ message }}
-    {{ class }} <br>
-    {{ confidence }} <br>
+    {{ prediction_message }}<br>
+    <br>
+    {{ all_scores_message }}
+    {% for k,v in all_scores.items %}
+        <li> {{ k }} : {{ v }} </li>
+    {% endfor %}
 </body>
 </html>
