@@ -1,0 +1,12 @@
+www.keycapvision.ml {
+    root * /srv/
+    file_server *
+    @notStatic {
+        not path /static/*
+    }
+    reverse_proxy @notStatic web:8000
+}
+
+keycapvision.ml {
+    redir https://www.keycapvision.ml/{uri}
+}

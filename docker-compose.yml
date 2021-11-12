@@ -7,16 +7,25 @@ services:
        - .:/code
     expose:
        - 8000
-#    ports:
-#       - 8000:8000
     command: python /code/mysite/manage.py runserver 0.0.0.0:8000
 
-  nginx:
-    restart: always
-    build: ./nginx/
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
     depends_on:
       - web
-    ports:
-      - "80:80"
     links:
       - web:web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/mysite/keycapvision/static:/srv/static/
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
