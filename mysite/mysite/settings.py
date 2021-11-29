@@ -18,8 +18,8 @@ import os
 import tensorflow as tf
 from tensorflow import keras
 
-IC_MODEL = tf.keras.models.load_model('mysite/mysite/model/saved_tutorialmodel')
-IC_CLASSES = ['daisy 🌼', 'dandelion 🌼', 'rose 🌹', 'sunflower 🌻', 'tulips 🌷']
+IC_MODEL = tf.keras.models.load_model('mysite/mysite/model/saved_model')
+IC_CLASSES = ['blue_samurai', 'carbon', 'chalk', 'laser', 'nautilus', 'red_samurai']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

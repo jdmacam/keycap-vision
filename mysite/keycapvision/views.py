@@ -14,7 +14,7 @@ def index(request):
         # get image file from the request
         f=request.FILES['sentFile'] 
         # name of the temporary image file for this request
-        file_name = "pic.jpg" 
+        file_name = "processing/pic.jpg" 
         # save to default directory (mysite/media)
         file_name_2 = default_storage.save(file_name, f) 
         file_url = 'mysite' + default_storage.url(file_name_2)
