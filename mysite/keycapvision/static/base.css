@@ -1,0 +1,38 @@
+.header img {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    width: auto;
+}
+
+.head h1 {
+    position: relative;
+    left: 50px;
+}
+body {
+    margin: 0;
+    background: linear-gradient(#ffffff, #9b9a9a);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Orbitron";
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 40px;
+    height: auto;
+    padding-left: 1rem;
+}
+
+.links {
+    font-family: "Orbitron";
+    text-align: center;
+}
+.links a{
+    color: black;
+}
+.links a:visited{
+    color:none;
+}

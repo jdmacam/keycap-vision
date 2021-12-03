@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'upload_page/upload_section.css' %}">
+<link rel="stylesheet" href="{% static 'upload_page/results.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="preview">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="sentFile" accept="image/*" onchange="loadFile(event)" /><br>
+    <img id="preview_image" /><br>
+    <input id="submit_button" type="submit" name="submit" value="Upload" />
+  </form>
+
+</div>
+<!-- Prediction output -->
+<div id="results">
+  {{ prediction_message }}
+  <br>
+  {{ all_scores_message }}
+  {% for k,v in all_scores.items %}
+  <li> {{ k }} : {{ v }} </li>
+  {% endfor %}
+</div>
+<!-- /Prediction output -->
+{% endblock %}
+
+{% block scripts %}
+<script>
+  var loadFile = function (event) {
+    var preview_image = document.getElementById('preview_image');
+    preview_image.src = URL.createObjectURL(event.target.files[0]);
+    preview_image.onload = function () {
+      URL.revokeObjectURL(preview_image.src)
+    }
+  };
+</script>
+{% endblock %}

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import secrets
 
 
 # Image Classification model stuff
@@ -29,7 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7^*hr-f*+q4ldvmfey5=$ik4n4fup7#x9$c_6)4y(ee1x7c+4r'
+# SECRET_KEY = 'django-insecure-7^*hr-f*+q4ldvmfey5=$ik4n4fup7#x9$c_6)4y(ee1x7c+4r'
+length = 50
+chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+SECRET_KEY = ''.join(secrets.choice(chars) for i in range(length))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

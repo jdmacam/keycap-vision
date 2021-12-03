@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:bold">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block css %} {% endblock %}
+    <title>Keycap Vision</title>
+</head>
+
+<body>
+    <div class="header">
+        <img id="symbol" src="{% static 'images/symbol.png' %}">
+        <h1> Keycap Vision </h1>
+    </div>
+    {% block content %} {% endblock %}
+
+    <div class="links">
+        <a href=""> About </a> / <a href=""> Repo </a> / <a href=""> Contact </a> 
+    </div>
+</body>
+
+{% block scripts %} {% endblock %}
+
+</html>

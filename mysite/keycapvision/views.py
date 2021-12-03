@@ -38,6 +38,6 @@ def index(request):
         context['prediction_message'] = "Prediction results: " + context['prediction'] + ' with a ' + context['confidence'] + '% confidence'
         context['all_scores_message'] = "Here are the results of the models predictions:"
         default_storage.delete(file_name)
-        return render(request,'index.html', context=context)
+        return render(request,'upload_page.html', context=context)
     else:
-        return render(request,'index.html')
+        return render(request,'upload_page.html')
