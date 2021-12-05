@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:bold">
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex+Pro">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
     {% block css %} {% endblock %}
     <title>Keycap Vision</title>
 </head>
@@ -15,15 +17,18 @@
 <body>
     <div class="header">
         <img id="symbol" src="{% static 'images/symbol.png' %}">
-        <h1> Keycap Vision </h1>
+        Keycap Vision
     </div>
-    {% block content %} {% endblock %}
-
+    <div id="main">
+        {% block content %} {% endblock %}
+    </div>
     <div class="links">
-        <a href=""> About </a> / <a href=""> Repo </a> / <a href=""> Contact </a> 
+        <a href=""> About </a> / <a href=""> Repo </a> / <a href=""> Contact </a>
     </div>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/foundation.min.js' %}"></script>
 {% block scripts %} {% endblock %}
 
 </html>

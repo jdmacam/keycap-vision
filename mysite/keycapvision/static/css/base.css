@@ -1,15 +1,18 @@
+.header {
+    padding: 25px;
+    padding-bottom: 15px;
+    font-family: "Orbitron";
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 40px;
+}
 .header img {
     float: left;
-    padding-left: 20px;
     padding-right: 20px;
     height: 50px;
     width: auto;
 }
 
-.head h1 {
-    position: relative;
-    left: 50px;
-}
 body {
     margin: 0;
     background: linear-gradient(#ffffff, #9b9a9a);
@@ -26,9 +29,23 @@ h1 {
     padding-left: 1rem;
 }
 
+#main{
+    background-color: aliceblue;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    border: 5px solid #000000;
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+}
+
 .links {
     font-family: "Orbitron";
     text-align: center;
+    margin: 40px
 }
 .links a{
     color: black;

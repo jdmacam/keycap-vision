@@ -1,0 +1,31 @@
+#upload_section{
+    text-align: center;
+    font-family: "Readex Pro";
+    padding-top: 10px;
+}
+
+#image_container{
+    width:100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    max-width: 500px;
+    max-height: 340px;
+    padding: 20px;
+    border-style: groove;
+}
+
+#image_container img{
+    max-height: 300px;
+    max-width: auto;
+    object-fit: contain;
+}
+
+#noimgtxt{
+    opacity: 40%;
+    font-weight: bold;
+}
+
+#submit{
+    margin-top: 10px;
+}

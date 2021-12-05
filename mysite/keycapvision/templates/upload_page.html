@@ -2,20 +2,30 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'upload_page/upload_section.css' %}">
-<link rel="stylesheet" href="{% static 'upload_page/results.css' %}">
+<link rel="stylesheet" href="{% static 'css/upload_page/upload_section.css' %}">
+<link rel="stylesheet" href="{% static 'css/upload_page/results.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
-<div id="preview">
+<!-- Upload/Submit section -->
+<div id="upload_section">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="sentFile" accept="image/*" onchange="loadFile(event)" /><br>
-    <img id="preview_image" /><br>
-    <input id="submit_button" type="submit" name="submit" value="Upload" />
+    <label for="file" class="button large">Upload Image</label>
+    <input type="file" name="file" id="file" class="show-for-sr" accept="image/*" onchange="loadFile(event)" /><br>
+    <div id="image_container">
+      <div id="noimgtxt">Click "Upload Image" to choose an image to submit.</div>
+      <img id="preview_image" /><br>
+    </div>
+    <button id="submit" type="submit" name="submit" class="button large" onclick="checkFile(event)" />
+    <i id="loading1" class="fa fa-cog fa-spin hide"></i>  Submit  <i id="loading2" class="fa fa-cog fa-spin hide"></i>
+    </button>
+    <!-- <button id="submit" type="submit" name="submit" class="button" onclick="checkFile(event)" />Submit</button> -->
   </form>
-
 </div>
+<!--  -->
+
 <!-- Prediction output -->
 <div id="results">
   {{ prediction_message }}
@@ -31,10 +41,23 @@
 {% block scripts %}
 <script>
   var loadFile = function (event) {
-    var preview_image = document.getElementById('preview_image');
+    console.log("Image selected");
+    $("#noimgtxt").empty();
+    var preview_image = document.getElementById("preview_image");
     preview_image.src = URL.createObjectURL(event.target.files[0]);
     preview_image.onload = function () {
       URL.revokeObjectURL(preview_image.src)
+    }
+  };
+  var checkFile = function (event) {
+    if (document.getElementById("file").value == "") {
+      console.log("UPLOAD: no file uploaded")
+      event.preventDefault();
+      alert("Please select a file.");
+    }
+    else{
+      $('#loading1').removeClass('hide');
+      $('#loading2').removeClass('hide');
     }
   };
 </script>

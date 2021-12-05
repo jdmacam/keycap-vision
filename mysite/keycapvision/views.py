@@ -12,7 +12,7 @@ def index(request):
     context = {}
     if request.method == 'POST':
         # get image file from the request
-        f=request.FILES['sentFile'] 
+        f=request.FILES['file'] 
         # name of the temporary image file for this request
         file_name = "processing/pic.jpg" 
         # save to default directory (mysite/media)
