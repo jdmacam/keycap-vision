@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="nav-container">
+    <div class="selection-container" id="container1">
+        <div class="selection-container-content" id="bar1">
+            <h1>Classify Keycap Set</h1>
+            <p class="subheader">Upload an image of a keycap set and classify it through the Keycap Set Classification Model.</p>
+            <a href="upload" class="round button">Upload</a>
+        </div>
+    </div>
+
+    <div class="selection-container" id="container2">
+        <div class="selection-container-content" id="bar2">
+            <h1>Keycap Set Classification List</h1>
+            <p class="subheader">View the list of keycap sets the Keycap Set Classification Model can identify.</p>
+            <a href="#" class="round button">View List</a>
+        </div>
+    </div>
+</div>
+  
+{% endblock %}

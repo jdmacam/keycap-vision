@@ -13,11 +13,14 @@
     width: auto;
 }
 
-body {
-    margin: 0;
-    background: linear-gradient(#ffffff, #9b9a9a);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.header a {
+    color: black;
+}
+.header a:hover {
+    color: #4d4d4d;
+}
+.header a:visited {
+    color: none;
 }
 
 h1 {

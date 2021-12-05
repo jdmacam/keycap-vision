@@ -16,8 +16,10 @@
 
 <body>
     <div class="header">
-        <img id="symbol" src="{% static 'images/symbol.png' %}">
-        Keycap Vision
+        <a href="/">
+            <img id="symbol" src="{% static 'images/symbol.png' %}">
+            Keycap Vision
+        </a>
     </div>
     <div id="main">
         {% block content %} {% endblock %}

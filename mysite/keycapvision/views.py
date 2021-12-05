@@ -12,7 +12,7 @@ import string
 # Create your views here.
 
 def landing(request):
-    return render(request, 'base.html')
+    return render(request, 'landing.html')
 
 def upload(request):
     context = {}
