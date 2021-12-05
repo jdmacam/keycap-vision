@@ -19,5 +19,6 @@ import keycapvision
 
 urlpatterns = [
     path('', include('keycapvision.urls')),
+    path('upload', include('keycapvision.urls')),
     path('admin/', admin.site.urls),
 ]

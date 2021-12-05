@@ -6,15 +6,22 @@ from django.core.files.storage import default_storage # for storing the uploaded
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
+import random
+import string
 
 # Create your views here.
-def index(request):
+
+def landing(request):
+    return render(request, 'base.html')
+
+def upload(request):
     context = {}
     if request.method == 'POST':
         # get image file from the request
         f=request.FILES['file'] 
-        # name of the temporary image file for this request
-        file_name = "processing/pic.jpg" 
+        # generate name of the temporary image file with unique name for this request
+        letters = string.ascii_lowercase
+        file_name = "processing/" + ''.join(random.choice(letters) for i in range(5)) + ".jpg" 
         # save to default directory (mysite/media)
         file_name_2 = default_storage.save(file_name, f) 
         file_url = 'mysite' + default_storage.url(file_name_2)
