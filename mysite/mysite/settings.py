@@ -20,7 +20,10 @@ import tensorflow as tf
 from tensorflow import keras
 
 IC_MODEL = tf.keras.models.load_model('mysite/mysite/model/saved_model')
-IC_CLASSES = ['blue_samurai', 'carbon', 'chalk', 'laser', 'nautilus', 'red_samurai']
+IC_CLASSES = []
+with open('mysite/mysite/model/saved_model/listfile.txt') as f:
+    IC_CLASSES = f.read().splitlines()
+print(IC_CLASSES)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

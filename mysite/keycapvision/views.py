@@ -27,8 +27,8 @@ def upload(request):
         file_url = 'mysite' + default_storage.url(file_name_2)
 
         #img dimensions for the model input
-        img_height = 180
-        img_width = 180
+        img_height = 200
+        img_width = 300
         img = tf.keras.utils.load_img(file_url, target_size=(img_height, img_width)) # load image
         img_array = tf.keras.utils.img_to_array(img) # convert to array to send thru model
         img_array = tf.expand_dims(img_array, 0) # Create a batch
@@ -45,6 +45,20 @@ def upload(request):
         context['prediction_message'] = "Prediction results: " + context['prediction'] + ' with a ' + context['confidence'] + '% confidence'
         context['all_scores_message'] = "Here are the results of the models predictions:"
         default_storage.delete(file_name)
-        return render(request,'upload_page.html', context=context)
+        return render(request,'results.html', context=context)
     else:
-        return render(request,'upload_page.html')
+        return render(request,'upload.html')
+
+def results(request):
+    return render(request, 'results.html')
+
+def upload_reload(request):
+    return redirect('/upload')
+
+def keeb_list(request):
+    context = {}
+    context['classes'] = settings.IC_CLASSES
+    return render(request, 'keeb_list.html', context=context)
+
+def jesse(request):
+    return render(request, 'jesse.html')
