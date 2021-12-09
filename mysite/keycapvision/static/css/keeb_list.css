@@ -1,0 +1,34 @@
+.list-wrapper {
+    overflow: scroll;
+    height: 100%;
+}
+
+.list-wrapper ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-type: none;
+}
+
+.list-wrapper li {
+    margin: 20px 0;
+}
+
+.item-container {
+    position: relative;
+    font-family: "Readex pro";
+    font-size: larger;
+    color: white;
+}
+.keeb-name-text {
+    background: ;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.list-wrapper img{
+    width:100%;
+    max-width:400px;
+    outline: 2px solid black;

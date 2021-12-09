@@ -6,32 +6,23 @@
     left: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
-    background-size: cover;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
 .selection-container#container1 {
-    background: url("https://imgix.kotaku.com.au/content/uploads/sites/3/2018/02/06/bkeoongodzh5zqy2pnmf.jpg?ar=16%3A9&auto=format&fit=crop&q=65&w=1280") bottom no-repeat;
+    background: url("/media/landing/container1.jpg") bottom no-repeat;
     background-size: stretch;
     max-width: 60%;
 }
 
 .selection-container#container2 {
-    background: url("https://media.wired.com/photos/5e2797e008cd76000809d2b6/master/pass/gear_gadget-lab_keyboard.jpg") center no-repeat;
+    background: url("/media/landing/container2.jpg") center no-repeat;
     background-size: stretch;
     background-position: 50% 75%;
     max-width: 60%;
-}
-
-@media screen and (min-width: 40em) {
-    .selection-container {
-    background-position: center center;
-    }
 }
 
 .selection-container-content {
@@ -63,18 +54,18 @@
 .selection-container-content h1 {
     font-family: "Orbitron";
     font-size: 30px;
+    text-align: center;
 }
 
+.container-button {
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+    margin: 0 auto;
+}
 .selection-container-content .button.round {
     border-radius: 5000px;
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 0;
 }
-
-@media screen and (min-width: 40em) {
-    .selection-container-content {
-    padding-left: 40%;
-    }
-}
-

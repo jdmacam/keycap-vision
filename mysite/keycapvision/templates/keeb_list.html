@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/keeb_list.css' %}">
+{% endblock %}
+
 {% block content %}
-
-{% for i in classes %}
-<li> {{ i }} </li>
-{% endfor %}
-
+<div class="list-wrapper">
+    <ul>
+        {% for k,v in img_sources.items %}
+        <li>
+            <div class="item-container">
+                <img src="{{ v }}">
+                <div class="keeb-name-text"> <u> {{ k }} </u></div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

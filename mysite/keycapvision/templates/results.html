@@ -7,14 +7,34 @@
 
 {% block content %}
 <!-- Prediction output -->
-<div id="results">
-    {{ prediction_message }}
+<div class="results">
+  <div class='col' id='col1'>
+    <!-- {{ prediction_message }}
     <br>
     {{ all_scores_message }}
     {% for k,v in all_scores.items %}
     <li> {{ k }} : {{ v }} </li>
-    {% endfor %}
+    {% endfor %} -->
+    <div id="prediction-container">
+      {{ prediction_message }}<br>
+      <br>
+      <u>{{ top_scores_message }}</u>
+      <ol type="1">
+        {% for k,v in top_scores.items %}
+        <li> {{ k }} : {{ v }} </li><br>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  <div class='col' id='col2'>
+    Prediction: {{ prediction }}
+    <img src="{{ src }}">
+  </div>
 </div>
-  <!-- /Prediction output -->
-<a href="upload_reload"> <button  class="button"> Upload Another? </button> </a>
+<!-- /Prediction output -->
+<!-- <div id="upload-again-section"> -->
+<div id="upload-again-clickable">
+  <a href="upload_reload" class="button large"> Upload Another? </a>
+</div>
+<!-- </div> -->
 {% endblock %}

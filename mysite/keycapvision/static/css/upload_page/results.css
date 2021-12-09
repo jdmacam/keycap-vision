@@ -1,0 +1,47 @@
+.results {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    width: 100%;
+}
+
+.col {
+    flex: 1;
+    height: 100%;
+}
+
+#col1 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    height: 100%;
+    border-style: solid;
+    font-family: "Readex Pro";
+}
+
+#prediction-container {
+    padding-left: 15px;
+}
+
+#col2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    text-align: center;
+    font-family: "Orbitron";
+}
+#col2 img {
+    max-height: 300px;
+    max-width: auto;
+    object-fit: contain;
+}
+
+#upload-again-clickable {
+    text-align: center;
+    font-family: "Readex Pro";
+    position: relative;
+    padding: 50px;
+    margin: 0 auto;
+}

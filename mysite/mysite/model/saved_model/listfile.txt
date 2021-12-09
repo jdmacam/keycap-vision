@@ -8,8 +8,8 @@ GMK Camping
 GMK Momo Yume
 GMK ThinkCaps
 Honeywell
-Horizon
 Laser
 Nautilus
+OEM Horizon
 Pulse
 Red Samurai
