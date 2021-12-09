@@ -34,14 +34,14 @@ h1 {
 
 #main{
     background-color: aliceblue;
-    height: 600px;
+    height: 700px;
     left: 50%;
     top: 50%;
     border: 5px solid #000000;
-    margin-top: 25px;
+    margin-top: 0;
     margin-left: 100px;
     margin-right: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 0;
     padding: 50px;
 }
 

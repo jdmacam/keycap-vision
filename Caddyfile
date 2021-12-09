@@ -12,8 +12,8 @@ www.keycapvision.ml {
             rool_keep_for 720h
         }
     }
-}
+} 
 
 keycapvision.ml {
-    redir https://www.keycapvision.ml/{uri}
+    redir https://www.keycapvision.ml{uri}
 }
